@@ -8,11 +8,19 @@ class Company(models.Model):
     description = models.TextField(max_length=200)
     employee_count = models.IntegerField()
 
+    class Meta:
+        verbose_name = 'Компания'
+        verbose_name_plural = 'Компании'
+
 
 class Specialty(models.Model):
     code = models.CharField(max_length=30)
     title = models.CharField(max_length=30)
     picture = models.URLField(default='https://place-hold.it/100x60')
+
+    class Meta:
+        verbose_name = 'Специализация'
+        verbose_name_plural = 'Специализации'
 
 
 class Vacancy(models.Model):
@@ -24,3 +32,7 @@ class Vacancy(models.Model):
     salary_min = models.IntegerField()
     salary_max = models.IntegerField()
     published_at = models.DateField()
+
+    class Meta:
+        verbose_name = 'Вакансия'
+        verbose_name_plural = 'Вакансия'

@@ -16,6 +16,7 @@ if __name__ == '__main__':
     Specialty.objects.all().delete()
 
     for dicts in data.jobs_data:
+        id = dicts["id"]
         title = dicts["title"]
         specialty = dicts["specialty"]
         company = dicts["company"]
@@ -26,6 +27,7 @@ if __name__ == '__main__':
         published_at = dicts["posted"]
 
         vacancy_instance = Vacancy.objects.create(
+            id=id,
             title=title,
             skills=skills,
             description=description,
@@ -35,6 +37,7 @@ if __name__ == '__main__':
     )
 
     for dicts in data.companies_data:
+        id = dicts["id"]
         name = dicts["title"]
         logo = dicts["logo"]
         employee_count = dicts["employee_count"]
@@ -42,6 +45,7 @@ if __name__ == '__main__':
         description = dicts["description"]
 
         company_instance = Company.objects.create(
+            id=id,
             name=name,
             location=location,
             logo=logo,
