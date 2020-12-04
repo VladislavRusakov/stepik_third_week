@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class CoronaappConfig(AppConfig):
-    name = 'CoronaApp'
+class VacsApp(AppConfig):
+    name = 'VacsApp'

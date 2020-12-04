@@ -5,7 +5,7 @@ os.environ["DJANGO_SETTINGS_MODULE"] = 'vacancies.settings'
 django.setup()
 
 
-from VacsApp.models import *
+from VacsApp.models import Vacancy, Company, Specialty
 from VacsApp import data
 
 

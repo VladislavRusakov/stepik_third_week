@@ -1,15 +1,15 @@
 from django.contrib import admin
 from django.urls import path
 
-from VacsApp.views import *
+from VacsApp import views
 
-handler404 = not_found_handler
-handler500 = internal_server_error_handler
+handler404 = views.not_found_handler
+handler500 = views.internal_server_error_handler
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', main_view, name='main'),
-    path('vacancies/', vacancies_list_view, name="vacancies_list"),
-    path('vacancies/<int:id>', exact_vac_view, name="exact_vac"),
-    path('vacancies/<str:category>/<str:spec>', spec_view, name="spec"),
-    path('companies/<int:id>', comp_view, name="comp"),
+    path('', views.main_view, name='main'),
+    path('vacancies/', views.vacancies_list_view, name="vacancies_list"),
+    path('vacancies/<int:id>', views.exact_vac_view, name="exact_vac"),
+    path('vacancies/<str:spec>', views.spec_view, name="spec"),
+    path('companies/<int:id>', views.comp_view, name="comp"),
 ]
